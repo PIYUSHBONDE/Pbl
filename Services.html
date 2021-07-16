@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PICT Medicare</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" type="text/css" href="smart-forms.css">
+    <link href="bluetheme.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="index.htm"><img src="medicare-removebg-preview.png"></a>
+            <p><a href="index.htm" style="color: #fff; text-decoration: none; font-size: 22px;">PICT MEDICARE</a></p>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i> 
+                <ul>
+                    <li><a href="index.htm">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="Services.html">SERVICES</a></li>
+                    <li><a href="faq.html" target="_blank">FAQ's</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <h1>Our Services</h1>
+  
+    </section>
+
+    <section class="course">
+        <h1>Services We Offer</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum sunt asperiores repellendus in ut obcaecati recusandae ipsam, suscipit id impedit consectetur ipsa facilis quae itaque eligendi quaerat laudantium, esse cupiditate.</p>
+        
+        <div class="row">
+            <div class="course-col">
+                <a href="helpline.html" id="row-btn">
+                   <h3>Helpline numbers</h3>
+                   <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem dignissimos commodi minus ad maiores tempore obcaecati. Consequatur, in voluptatibus ea soluta amet dignissimos architecto repudiandae magnam omnis nostrum hic similique!</p>
+                </a>
+            </div>
+            
+            <div class="course-col">
+                <a href="bloodbank.html" id="row-btn">
+                   <h3>Blood Banks</h3>
+                   <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem dignissimos commodi minus ad maiores tempore obcaecati. Consequatur, in voluptatibus ea soluta amet dignissimos architecto repudiandae magnam omnis nostrum hic similique!</p>
+                </a>
+            </div>
+            <div class="course-col">
+                <a href="hospital.html" id="row-btn">
+                   <h3>Hospitals</h3>
+                   <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem dignissimos commodi minus ad maiores tempore obcaecati. Consequatur, in voluptatibus ea soluta amet dignissimos architecto repudiandae magnam omnis nostrum hic similique!</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+<!-- comment box -->
+
+<section id="app">
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <div class="comment">
+        <p v-for="items in item" v-text="items"></p>
+          </div><!--End Comment-->
+          </div><!--End col -->
+          </div><!-- End row -->
+      <div class="row">
+        <div class="col-6">
+      <textarea type="text" class="input" placeholder="Write a comment" v-model="newItem" @keyup.enter="addItem()"></textarea>
+          <button v-on:click="addItem()" class='primaryContained float-right' type="submit">Add Comment</button>
+        </div><!-- End col -->
+      </div><!--End Row -->
+    </div><!--End Container -->
+  </section><!-- end App -->
+
+    <!-- footer -->
+
+    <section class="footer">
+        <h4>About Us<h4>
+        <p>We pledge to put patients first in all of our programs – Medicaid, Medicare, and the Health Insurance Exchanges. To do this, we must empower patients to work with their doctors and make health care decisions that are best for them.<br>
+            This means giving them meaningful information about quality and costs to be active health care consumers. It also includes supporting innovative approaches to improving quality, accessibility, and affordability, while finding the best ways to use innovative technology to support patient-centered care.
+      
+        </p>
+        <div class="icons">
+            <i class="fa fa-facebook" ></i>
+            <i class="fa fa-twitter" ></i>
+            <i class="fa fa-instagram" ></i>
+            <i class="fa fa-linkedin" ></i>
+        </div>
+        <p>Made with <i class="fa fa-heart-o" ></i> by group-3</p>
+    </section>
+
+    <script>
+        var navLinks = document.getElementById("navLinks")
+
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+
+    </script>
+    <!-- Vue JS -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js'></script>
+    <!-- jQuery -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
+    <script>
+        $(document).ready(function(){ 
+ 
+ $(".primaryContained").on('click', function(){
+ $(".comment").addClass("commentClicked");
+});//end click
+$("textarea").on('keyup.enter', function(){
+ $(".comment").addClass("commentClicked");
+});//end keyup
+});//End Function
+
+new Vue({
+ el: "#app",
+ data:{
+    title: 'Add a comment',
+   newItem: '',
+   item: [],
+ },
+ methods:{
+   addItem  (){
+   this.item.push(this.newItem);
+     this.newItem = "";
+   }
+}
+
+});
+
+    </script>
+
+    
+</body>
+</html>
